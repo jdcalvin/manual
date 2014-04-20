@@ -1,0 +1,26 @@
+<h1>Table of Contents</h1>
+
+<table class="table">
+  <tbody>
+    <% @sections.each do |section| %>
+      <tr class="section-header">
+        <td colspan=2>
+          <strong>SECTION:
+          <%= section.section_number %></strong>
+          
+          <%= link_to section.section_title, section %>
+        <td>
+      </tr>
+      <% section.chapters.each do |chapter| %>
+        <tr>
+          <td><%= chapter.chapter_number %>:</td>
+          <td><%= link_to chapter.chapter_title, section_chapter_path(section, chapter) %></td>
+        <tr>
+      <% end %>
+
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,44 @@
+$light-gray: #e5e5e5;
+$purple: #7f1786;
+$dark-purple: #392a93;
+$gold: #ce9d00;
+$gold-fade: #9B7F27;
+$gold-dark: #866600;
+$dark-gray: #595959;
+$gold-light: #E7BD3A;
+$gold-light-light: #E7C868;
+
+
+body {
+	background-color: $gold;
+}
+.container {
+	max-width: 950px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 1em;
+}
+
+.actions {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.field {
+	padding-top: 1em;
+}
+
+.section-header {
+	background-color: $light-gray;
+}
+
+.btn-primary {
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1 {
+	text-align: center;
+}
