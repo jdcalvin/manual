@@ -42,3 +42,19 @@ a:hover {
 h1 {
 	text-align: center;
 }
+
+#nav {
+}
+
+#search {
+	background-color: $dark-gray;
+	border: black;
+}
+
+.toc-header {
+	color: $dark-gray;
+}
+
+.toc {
+	min-width: 400px;
+}
