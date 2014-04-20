@@ -57,7 +57,7 @@ class ChaptersController < ApplicationController
   def destroy
     @chapter.destroy
     respond_to do |format|
-      format.html { redirect_to chapters_url }
+      format.html { redirect_to section_chapters_url }
       format.json { head :no_content }
     end
   end
