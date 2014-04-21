@@ -1,15 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Chapter title:</strong>
-  <%= @chapter.chapter_title %>
-</p>
+<h2 class="chapter-header">CHAPTER</h2>
+<h1 class="chapter-number"><%= @chapter.chapter_number %></h1>
+<h1 class="chapter-title"><%= @chapter.chapter_title %></h1>
+<h3 class="chapter-author">by <%= @chapter.author %></h3>
 
-<p>
-  <strong>Chapter number:</strong>
-  <%= @chapter.chapter_number %>
-</p>
+<div class="chapter-content">
+	<p>
+		<%= simple_format @chapter.content %>
+	</p>
+</div>
 
+<div class="chapter-summary">
+	<div class="phoenix-small">
+		<%=image_tag 'phoenix-small.png' %>
+	</div>
+	<h2 class="chapter-header">CHAPTER SUMMARY</h2>
+	<p>
+		<%= simple_format @chapter.summary %>
+	</p>
+</div>
 
 <%= link_to 'Edit', edit_section_chapter_path(@section, @chapter) %> |
 <%= link_to 'Back', section_chapters_path %>

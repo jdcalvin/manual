@@ -8,6 +8,16 @@ $dark-gray: #595959;
 $gold-light: #E7BD3A;
 $gold-light-light: #E7C868;
 
+.border {
+	border: 3px solid $gold;
+}
+.home {
+	padding: .5em;
+	border: 2px solid $gold;
+	margin: 4px;
+	
+	text-align:center;
+}
 
 body {
 	background-color: $gold;
@@ -17,6 +27,7 @@ body {
 	margin: 0 auto;
 	background-color: white;
 	padding: 1em;
+	margin-top: 0px;
 }
 
 .actions {
@@ -28,8 +39,11 @@ body {
 	padding-top: 1em;
 }
 
-.section-header {
+.section-row {
 	background-color: $light-gray;
+}
+.chapter-row-number {
+	text-align: right;
 }
 
 .btn-primary {
@@ -43,7 +57,8 @@ h1 {
 	text-align: center;
 }
 
-#nav {
+.navbar {
+	margin-bottom: 0;
 }
 
 #search {
@@ -57,4 +72,87 @@ h1 {
 
 .toc {
 	min-width: 400px;
+}
+
+
+/*======CHAPTER=====*/
+
+.chapter-header {
+	text-align: center;
+	letter-spacing: 3px;
+
+}
+.chapter-title {
+	text-align: center;
+
+}
+.chapter-number {
+	font-size: 10em;
+	text-align: center;
+	color: $gold;
+	text-shadow: 1px 1px 3px $dark-gray;
+}
+
+.objectives {
+	margin: .5em;
+	padding: 1em;
+	background-color: $light-gray;
+	.col-sm-3 {
+		text-align: center;
+		font-weight: 700;
+		border-right: 1px solid black;
+	}
+	.col-sm-8 {
+
+	}
+}
+.chapter-author {
+	text-align: center;
+}
+.chapter-content {
+	float:left;
+}
+
+.chapter-summary {
+	padding:1em;
+	float: left;
+	background-color: $light-gray;
+	border: 2px solid black;
+}
+
+.first-letter {
+	color: $gold;
+	font-size: 3em;
+	text-shadow: 1px 1px 3px $dark-gray;
+}
+
+.chapter-sections {
+	color: $gold;
+	text-align: center;
+	text-shadow: 1px 1px 3px $dark-gray;
+}
+
+.about-author {
+	font-style: italic;
+	border-top: 1px dashed $dark-gray;
+	margin-top: 1em;
+	padding-bottom: 1em;
+
+}
+
+.phoenix-small {
+	margin: 0 auto;
+	text-align: center;
+	width: 150px;
+	img {
+		width: 100%;
+	}
+}
+.phoenix-gold {
+	margin: 0 auto;
+	text-align: center;
+	width: 60%;
+	img {
+	width: 100%;
+	}
 }
