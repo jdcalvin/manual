@@ -1,6 +1,6 @@
 <ul class="dropdown-menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
+	<li><%= link_to '<span class=" nav-settings glyphicon glyphicon-user"></span> Profile'.html_safe, '#' %></li>
+	<li><%= link_to '<span class=" nav-settings glyphicon glyphicon-cog"></span> Settings'.html_safe, '#' %></li>
             <li class="divider"></li>
-            <li><a href="#">Sign Out</a></li>
-          </ul>
+	<li><%= link_to '<span class="nav-settings glyphicon glyphicon-log-out"></span> Sign Out'.html_safe, '#' %></li>
+</ul>
