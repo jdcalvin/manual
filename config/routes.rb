@@ -8,6 +8,8 @@ Manual::Application.routes.draw do
   match 'help', to: 'static_pages#help', via: 'get'
   match 'contact', to: 'static_pages#contact', via: 'get'
   match 'content', to: 'static_pages#content', via: 'get'
+  match 'foreword', to: 'static_pages#foreword', via: 'get'
+  match 'mission', to: 'static_pages#mission', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

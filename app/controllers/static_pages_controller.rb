@@ -11,4 +11,7 @@ class StaticPagesController < ApplicationController
 
 	def content
 	end
+
+	def foreword
+	end
 end

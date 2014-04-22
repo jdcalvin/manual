@@ -1,4 +1,6 @@
 <ul class="dropdown-menu toc">
+	<li><%= link_to 'Foreword', foreword_path %></li>
+	<li><%= link_to 'Our Mission', mission_path %></li>
 	<% Section.all.each do |section| %>
 		<span class="toc-header"><%= section.section_number%>: <%=section.section_title %></span>
 		<% section.chapters.sort.each do |chapter| %>
