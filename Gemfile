@@ -17,6 +17,7 @@ gem 'rack-mini-profiler'
 gem 'bootstrap-sass'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'cocoon'
 
 group :doc do
   gem 'sdoc', require: false

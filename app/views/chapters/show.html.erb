@@ -19,6 +19,12 @@
 	<p>
 		<%= simple_format @chapter.summary %>
 	</p>
+	<ol>
+		<% @chapter.questions.each do |question| %>
+			<li><%= question.question %></li>
+		<% end %>
+	</ol>
+
 </div>
 
 <%= link_to 'Edit', edit_section_chapter_path(@section, @chapter) %> |
