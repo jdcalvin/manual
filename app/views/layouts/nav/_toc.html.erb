@@ -1,8 +1,8 @@
 <ul class="dropdown-menu toc">
 	<% Section.all.each do |section| %>
 		<span class="toc-header"><%= section.section_number%>: <%=section.section_title %></span>
-		<% section.chapters.each do |chapter| %>
-      <li><%= link_to chapter.chapter_title, section_chapter_path(section, chapter) %></li>
+		<% section.chapters.sort.each do |chapter| %>
+      <li><%= link_to "#{chapter.chapter_number}: #{chapter.chapter_title}", section_chapter_path(section, chapter) %></li>
      <% end %>
       <li class="divider"></li>
    <% end %>
