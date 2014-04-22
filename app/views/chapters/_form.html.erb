@@ -1,39 +1,59 @@
 <%= form_for [@section, @chapter] do |f| %>
   <%= render 'layouts/error_messages', object: f.object %>
+  <!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#title" data-toggle="tab">Title</a></li>
+  <li><a href="#content" data-toggle="tab">Content</a></li>
+  <li><a href="#summary" data-toggle="tab">Summary</a></li>
+  <li><a href="#questions" data-toggle="tab">Questions</a></li>
+</ul>
 
-  <div class="field">
-    <%= f.label :chapter_title %><br>
-    <%= f.text_field :chapter_title %>
-  </div>
-  <div class="field">
-    <%= f.label :chapter_number %><br>
-    <%= f.text_field :chapter_number %>
-  </div>
+<div class="tab-content">
+  <div class="tab-pane active" id="title">
+    <div class="field">
+      <%= f.label :chapter_title %><br>
+      <%= f.text_field :chapter_title %>
+    </div>
+    <div class="field">
+      <%= f.label :chapter_number %><br>
+      <%= f.text_field :chapter_number %>
+    </div>
 
    <div class="field">
     <%= f.label :author %><br>
     <%= f.text_field :author %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content, style:"width: 100%; max-width: 100%", rows:10 %>
+  <div class="tab-pane" id="content">
+    <div class="field">
+      <%= f.label :content %><br>
+      <%= f.text_area :content, class:"tinymce", :rows => 20 %>  
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :summary %><br>
-    <%= f.text_area :summary, style:"width: 100%; max-width: 100%", rows:10 %>
+  <div class="tab-pane" id="summary">
+    <div class="field">
+      <%= f.label :summary %><br>
+      <%= f.text_area :summary %>
+    </div>
   </div>
 
-  <div id="questions">
-    <%= f.fields_for :questions do |builder| %>
-      <%= render "question_fields", f: builder %>
-    <% end %>
+  <div class="tab-pane" id="questions">
+    <div id="questions">
+      <%= f.fields_for :questions do |builder| %>
+        <%= render "question_fields", f: builder %>
+      <% end %>
 
-    <%= link_to_add_association "Add Question", f, :questions %>
+      <%= link_to_add_association "Add Question", f, :questions %>
+    </div>
   </div>
-  
-  <div class="actions">
-    <%= f.submit "Submit", class:"btn btn-primary" %>
-  </div>
+</div>
+    
+<div class="actions">
+  <%= f.submit "Submit", class:"btn btn-primary" %>
+</div>
+
 <% end %>
+
+<%= tinymce %>

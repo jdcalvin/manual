@@ -18,6 +18,7 @@ gem 'bootstrap-sass'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'cocoon'
+gem 'tinymce-rails'
 
 group :doc do
   gem 'sdoc', require: false

@@ -5,7 +5,7 @@ module ApplicationHelper
 	end
 
 	def text_area(name, options = {}, html_options = {})
-		super(name, options, html_options.merge(:class => 'form-control'))
+		super(name, options, html_options.merge(:class =>'tinymce form-control'))
 	end
 
 	def inline_svg(path)
