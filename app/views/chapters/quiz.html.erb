@@ -1,0 +1,17 @@
+<h2 class="chapter-header">CHAPTER</h2>
+<h1 class="chapter-number"><%= @chapter.chapter_number %></h1>
+<h1 class="chapter-title">Quiz</h1>
+
+<% @chapter.questions.each do |question| %>
+	<div class="field"style="padding-bottom:1em">
+    <label><%=question.question %></label>
+    <input class="form-control" ></input>
+
+  </div>
+ <% end %>
+
+ <%=link_to 'Submit', sections_path, class:"btn btn-primary" %>
+
+<div class="phoenix-small">
+	<%= inline_svg('phoenix-small.svg') %>
+</div>

@@ -9,8 +9,17 @@ module ApplicationHelper
 	end
 
 	def inline_svg(path)
-  file = File.open("app/assets/images/#{path}", "rb")
-  raw file.read
-end
+  	file = File.open("app/assets/images/#{path}", "rb")
+  	raw file.read
+	end
+
+	def alert_icons
+		hash = Hash.new(0)
+		hash[:success] = "ok-sign"
+		hash[:info] = "info-sign"
+		hash[:warning] = "exclamation-sign"
+		hash[:danger] = "exclamation-sign"
+		return hash
+	end
 
 end

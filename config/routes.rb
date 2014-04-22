@@ -1,7 +1,9 @@
 Manual::Application.routes.draw do
 
   resources :sections do
-    resources :chapters
+    resources :chapters do
+      match 'quiz', to: 'chapters#quiz', via: 'get'  
+    end
   end
 
   match 'home', to: 'static_pages#home', via: 'get'

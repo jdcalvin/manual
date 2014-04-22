@@ -2,13 +2,11 @@ class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy]
 
   # GET /sections
-  # GET /sections.json
   def index
     @sections = Section.all
   end
 
   # GET /sections/1
-  # GET /sections/1.json
   def show
   end
 
@@ -22,43 +20,31 @@ class SectionsController < ApplicationController
   end
 
   # POST /sections
-  # POST /sections.json
   def create
     @section = Section.new(section_params)
-
-    respond_to do |format|
-      if @section.save
-        format.html { redirect_to @section, notice: 'Section was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @section }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @section.errors, status: :unprocessable_entity }
-      end
+    if @section.save
+      flash[:success] =  'Section was successfully created.'
+      redirect_to @section
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /sections/1
-  # PATCH/PUT /sections/1.json
   def update
-    respond_to do |format|
       if @section.update(section_params)
-        format.html { redirect_to @section, notice: 'Section was successfully updated.' }
-        format.json { head :no_content }
+        flash[:success] =  'Section was successfully updated.'
+        redirect_to @section
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @section.errors, status: :unprocessable_entity }
+        render action: 'edit'
       end
-    end
   end
 
   # DELETE /sections/1
-  # DELETE /sections/1.json
   def destroy
     @section.destroy
-    respond_to do |format|
-      format.html { redirect_to sections_url }
-      format.json { head :no_content }
-    end
+    flash[:danger] =  'Section was successfully deleted.'
+    redirect_to sections_url 
   end
 
   private

@@ -44,6 +44,7 @@ body {
 	padding: 4px;
 	margin-top: 0px;
 	border: 2px solid black;
+	border-top: none;
 	margin: 0 auto;
 }
 
@@ -172,6 +173,9 @@ h3 {
 	}
 }
 
+.quiz-btn {
+	margin: 1em;
+}
 .content-extras {
 	td {
 	padding-left: 2em;

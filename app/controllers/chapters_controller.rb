@@ -3,14 +3,16 @@ class ChaptersController < ApplicationController
   before_action :set_section
 
   # GET /chapters
-  # GET /chapters.json
   def index
     @chapters = @section.chapters
   end
-
   # GET /chapters/1
-  # GET /chapters/1.json
   def show
+  end
+
+  # GET /chapters/1/quiz
+  def quiz
+    @chapter = Chapter.find(params[:chapter_id])
   end
 
   # GET /chapters/new
@@ -23,43 +25,32 @@ class ChaptersController < ApplicationController
   end
 
   # POST /chapters
-  # POST /chapters.json
   def create
     @chapter = @section.chapters.build(chapter_params)
-
-    respond_to do |format|
       if @chapter.save
-        format.html { redirect_to section_chapter_path(@section, @chapter), notice: 'Chapter was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @chapter }
+        flash[:success] =  'Chapter was successfully created.'
+        redirect_to section_chapter_path(@section, @chapter)
       else
-        format.html { render action: 'new' }
-        format.json { render json: @chapter.errors, status: :unprocessable_entity }
+        render action: 'new'
       end
-    end
   end
 
   # PATCH/PUT /chapters/1
-  # PATCH/PUT /chapters/1.json
   def update
-    respond_to do |format|
-      if @chapter.update(chapter_params)
-        format.html { redirect_to section_chapter_path(@section, @chapter), notice: 'Chapter was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @chapter.errors, status: :unprocessable_entity }
-      end
+    if @chapter.update(chapter_params)
+      flash[:success] =  'Chapter was successfully updated.'
+      redirect_to section_chapter_path(@section, @chapter)    
+    else
+      render action: 'edit'  
     end
   end
 
   # DELETE /chapters/1
-  # DELETE /chapters/1.json
+
   def destroy
     @chapter.destroy
-    respond_to do |format|
-      format.html { redirect_to section_chapters_url }
-      format.json { head :no_content }
-    end
+    flash[:danger] = "Chapter successfully removed"
+    redirect_to section_chapters_url
   end
 
   private
