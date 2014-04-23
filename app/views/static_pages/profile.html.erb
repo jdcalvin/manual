@@ -1,0 +1,60 @@
+<div class="phoenix-small">
+	<%= inline_svg('phoenix-small.svg') %>
+</div>
+
+<div class="row" style="text-align:center;">
+	<div class="col-sm-12 col-md-12" >
+		<div class="headshot">
+		</div>
+	</div>
+	<div style="margin: 0 auto;"class="col-sm-12 col-md-12">
+		<h2>Noble Leslie DeVotie</h2>
+		<h4><%= mail_to 'devotie@sae.org' %></h4>
+	</div>
+</div>
+
+<h4 style="text-align:center">Chapter: University of Alabama</h4>
+<h4 style="text-align:center">Status: Founder</h4>
+<h4 style="text-align:center">Class: 1859</h4>
+
+<div class="divider">
+</div>
+<h2 style="text-align:center">Manual Progress</h2>
+<div class="progress">
+<table class="table">
+<% Section.all.each do |section| %>
+      <tr class="section-row">
+        <td colspan=2>
+          <strong>SECTION:
+          <%= section.section_number %></strong>   
+          <%= section.section_title %>
+        </td>
+        <td>
+        	<% if section == Section.first %>
+        	<span class="badge">3/5</span>
+        	<% else %>
+        	<span class="badge">0/<%=section.chapters.count %></span>
+        	<% end %>
+        </td>
+      </tr>
+
+      <% section.chapters.sort.each do |chapter| %>
+        <tr class="chapter-row">
+          <td class="chapter-row-number"><%= chapter.chapter_number %>:</td>
+          <td><%= link_to chapter.chapter_title, section_chapter_path(section, chapter) %></td>
+      	<% if chapter == Chapter.find(1) || chapter == Chapter.find(2) || chapter == Chapter.find(3)  %>
+          <td><span class=" green glyphicon glyphicon-ok"></span></td>
+        <% else %>
+          <td><span class="red glyphicon glyphicon-remove"></span></td>
+          <% end %>
+
+        <tr>
+      <% end %>
+
+    <% end %>
+  </table>
+</div>
+
+<div class="phoenix-small">
+	<%= inline_svg('phoenix-small.svg') %>
+</div>

@@ -14,6 +14,7 @@ Manual::Application.routes.draw do
   match 'content', to: 'static_pages#content', via: 'get'
   match 'foreword', to: 'static_pages#foreword', via: 'get'
   match 'mission', to: 'static_pages#mission', via: 'get'
+  match 'profile', to: 'static_pages#profile', via: 'get'
 
   root 'static_pages#home'
   

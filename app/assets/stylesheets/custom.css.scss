@@ -44,6 +44,27 @@ body {
 	padding: 1em;
 }
 
+.divider {
+	width: 100%;
+	border-top: 1px solid $dark-gray;
+	margin-top: 1em;
+}
+.progress {
+	width: 80%;
+	margin: 0 auto;
+	height: 400px;
+	overflow-y: scroll;
+	border: 1px solid $light-gray;
+	padding:.5em;
+}
+.green {
+	color: green;
+}
+
+.red {
+	color: red;
+}
+
 .nav-settings {
 	padding-right: 1em;
 }
@@ -89,7 +110,20 @@ h3 {
 	text-align: center;
 }
 
-
+.user-header {
+	margin: 0 auto;
+	width: 70%;
+}
+.headshot {
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background-image: image-url("head.jpg");
+	border: 2px solid black;
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
+}
 .navbar {
 	margin-bottom: 0;
 }
