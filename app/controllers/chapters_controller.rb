@@ -54,19 +54,20 @@ class ChaptersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_chapter
-      @chapter = Chapter.find(params[:id])
-    end
+  
+  # Use callbacks to share common setup or constraints between actions.
+  def set_chapter
+    @chapter = Chapter.find(params[:id])
+  end
 
-    def set_section
-      @section = Section.find(params[:section_id])
-    end
+  def set_section
+    @section = Section.find(params[:section_id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def chapter_params
-      params.require(:chapter)
-      .permit(:chapter_title, :chapter_number, :content, :author, :summary, :section_id,
-        questions_attributes: [:id, :question, :chapter_id, :_destroy])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def chapter_params
+    params.require(:chapter)
+    .permit(:chapter_title, :chapter_number, :content, :author, :summary, :section_id,
+      questions_attributes: [:id, :question, :chapter_id, :_destroy])
+  end
 end
