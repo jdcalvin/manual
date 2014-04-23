@@ -1,0 +1,2 @@
+module TinymceassetsHelper
+end

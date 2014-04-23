@@ -7,6 +7,8 @@ $gold-dark: #866600;
 $dark-gray: #595959;
 $gold-light: #E7BD3A;
 $gold-light-light: #E7C868;
+$danger: #d9534f;
+$danger-hover: #a94442;
 
 	.phoenix {
 	width: 100%;
@@ -28,6 +30,11 @@ $gold-light-light: #E7C868;
 	}
 }
 
+.chapter-summary {
+	p {
+	margin: 0;
+	}
+}
 body {
 	background-color: $gold;
 }
@@ -92,6 +99,15 @@ h3 {
 	border: black;
 }
 
+img {
+	margin-left: 25%;
+	border: 1px solid $light-gray;
+	padding: .5em;
+}
+.thumbnail {
+margin: 0 auto;
+display: inline-block;
+}
 .toc-header {
 	color: $dark-gray;
 }
@@ -101,9 +117,19 @@ h3 {
 	padding-left: 1em;
 }
 
-
+.nested-fields {
+	margin-bottom: 1em;
+}
 /*======CHAPTER=====*/
 
+.question-remove {
+	padding-left: 1em;
+	color: $danger;
+}
+
+.question-remove:hover {
+	color: $danger-hover;
+	}
 .chapter-header {
 	text-align: center;
 	letter-spacing: 3px;
@@ -136,13 +162,9 @@ h3 {
 .chapter-author {
 	text-align: center;
 }
-.chapter-content {
-	float:left;
-}
 
 .chapter-summary {
 	padding:1em;
-	float: left;
 	background-color: $light-gray;
 	border: 2px solid black;
 }

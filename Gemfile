@@ -19,6 +19,8 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'cocoon'
 gem 'tinymce-rails'
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+gem 'paperclip', "~> 4.1"
 
 group :doc do
   gem 'sdoc', require: false

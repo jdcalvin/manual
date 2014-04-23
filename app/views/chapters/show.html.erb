@@ -15,7 +15,7 @@
 	</div>
 	<h2 class="chapter-header">CHAPTER SUMMARY</h2>
 	<p>
-		<%= simple_format @chapter.summary %>
+		<%= @chapter.summary %>
 	</p>
 	<ol>
 		<% @chapter.questions.each do |question| %>

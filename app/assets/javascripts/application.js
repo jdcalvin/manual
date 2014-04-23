@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require tinymce-jquery
 //= require tinymce
 //= require turbolinks
 //= require cocoon
 //= require bootstrap
 //= require_tree .
-

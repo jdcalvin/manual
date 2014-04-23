@@ -1,3 +1,27 @@
+<script type="text/javascript">
+$("document:ready", function() {
+  $("[rel=tinymce]").tinymce({
+    theme: "modern",
+    theme_advanced_toolbar_align: "left",
+    height: "400px",
+    toolbar: "undo,redo,|,bold,italic,underline,|,bullist,numlist,outdent,indent,|,alignleft, aligncenter, alignright,|,uploadimage",
+    plugins: ["uploadimage", "link", "fullscreen", "table"],
+    style_formats: [
+        {title: 'Gold text', inline: 'span', styles: {color: 'gold', fontSize: '20px'},classes: 'first-letter'},
+        {title: 'Thumbnail', inline: 'a', styles: {border: '2px solid red'}, classes: 'thumbnail'},
+        {title: 'About Author', block: 'div', styles: {border: '1px solid black', backgroundColor: '#DDD'}, classes: 'about-author'},
+        {title: 'Section Header', block: 'h3', styles: {color: '#866600', fontSize: '20px', backgroundColor: '#DDD', textAlign: 'center'}, classes: 'chapter-sections'},
+    ],
+    relative_urls: false,
+    force_p_newlines : false,
+    forced_root_block : false,
+    convert_newlines_to_brs: false,
+    remove_linebreaks : true, 
+    remove_script_host: false,
+    document_base_url: (!window.location.origin ? window.location.protocol + "//" + window.location.host : window.location.origin) + "/",
+  })
+});
+</script>
 <%= form_for [@section, @chapter] do |f| %>
   <%= render 'layouts/error_messages', object: f.object %>
   <!-- Nav tabs -->
@@ -28,7 +52,7 @@
   <div class="tab-pane" id="content">
     <div class="field">
       <%= f.label :content %><br>
-      <%= f.text_area :content, class:"tinymce", :rows => 20 %>  
+      <%= f.text_area :content %>  
     </div>
   </div>
 
@@ -44,11 +68,11 @@
       <%= f.fields_for :questions do |builder| %>
         <%= render "question_fields", f: builder %>
       <% end %>
-
       <%= link_to_add_association "Add Question", f, :questions %>
     </div>
   </div>
 </div>
+
     
 <div class="actions">
   <%= f.submit "Submit", class:"btn btn-primary" %>
@@ -56,4 +80,3 @@
 
 <% end %>
 
-<%= tinymce %>
