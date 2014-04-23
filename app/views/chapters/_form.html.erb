@@ -3,12 +3,13 @@ $("document:ready", function() {
   $("[rel=tinymce]").tinymce({
     theme: "modern",
     theme_advanced_toolbar_align: "left",
+    them_advanced_styles: 'Textbox=content',
     height: "400px",
     toolbar: "undo,redo,|,bold,italic,underline,|,bullist,numlist,outdent,indent,|,alignleft, aligncenter, alignright,|,uploadimage",
     plugins: ["uploadimage", "link", "fullscreen", "table"],
     style_formats: [
         {title: 'Gold text', inline: 'span', styles: {color: 'gold', fontSize: '20px'},classes: 'first-letter'},
-        {title: 'Thumbnail', inline: 'a', styles: {border: '2px solid red'}, classes: 'thumbnail'},
+        {title: 'Thumbnail', block: 'div', styles: {border: '2px solid red'}, classes: 'thumbnail'},
         {title: 'About Author', block: 'div', styles: {border: '1px solid black', backgroundColor: '#DDD'}, classes: 'about-author'},
         {title: 'Section Header', block: 'h3', styles: {color: '#866600', fontSize: '20px', backgroundColor: '#DDD', textAlign: 'center'}, classes: 'chapter-sections'},
     ],
